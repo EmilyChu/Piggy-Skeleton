@@ -28,12 +28,13 @@ end
   scoreboard.first.wins +=1
   scoreboard.first.save!
 
+if g.winner  # why does this if have to be here?!?!?!
   g.losers.each do |x|
     scoreboard = Record.where(name: x.name)
     scoreboard.first.losses +=1
     scoreboard.first.save!
   end
-
+end
 puts "#{g.winner.name} wins!"
 # puts "Your record is now: #{ph.total} games played, #{ph.wins} wins, #{ph.losses} losses (#{ph.percentage}%)"
 
