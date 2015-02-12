@@ -4,6 +4,6 @@ class Record < ActiveRecord::Base
   end
 
   def percentage
-    ((wins * 100) / (wins + losses)).round2
+    ((wins * 100.0) / (wins + losses)).round 2
   end
 end

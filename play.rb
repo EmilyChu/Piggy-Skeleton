@@ -14,7 +14,7 @@ g.players.each do |p|
   scoreboard = Record.where(name: n).first
   if scoreboard
     puts "Welcome back, #{n}"
-    # puts "Your history: #{scoreboard.total} games played, #{scoreboard.wins} wins, #{scoreboard.losses} losses (#{scoreboard.percentage}%)"
+    puts "Your history: #{scoreboard.total} games played, #{scoreboard.wins} wins, #{scoreboard.losses} losses (#{scoreboard.percentage}%)"
   else
     scoreboard = Record.create(name: n, wins: 0, losses: 0)
   end
