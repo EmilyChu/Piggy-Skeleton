@@ -2,8 +2,15 @@ require 'pry'
 require './db/setup'
 require './lib/borrowed_pig'
 require './lib/record'
+require './leaderboard'
 
-
+puts "Do you want to see the Leaderboard? (y/n)"
+answer = gets.chomp.downcase
+  if answer == "y"
+    d = Leaderboard.new
+    d.display
+  else 
+  end
 
 g = Pig.new
 
@@ -36,9 +43,8 @@ if g.winner  # why does this if have to be here?!?!?!
   end
 end
 puts "#{g.winner.name} wins!"
-# puts "Your record is now: #{ph.total} games played, #{ph.wins} wins, #{ph.losses} losses (#{ph.percentage}%)"
+puts "Your record is now: #{scoreboard.total} games played, #{scoreboard.wins} wins, #{scoreboard.losses} losses (#{scoreboard.percentage}%)"
 
 # scoreboard = Memory.first_or_create!(name: name)
-# emily = Record.new(name: name, wins: 0, losses: 0)
 
-# if there is a winner.. add one to their wins tally
+
