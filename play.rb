@@ -43,7 +43,9 @@ if g.winner  # why does this if have to be here?!?!?!
   end
 end
 puts "#{g.winner.name} wins!"
-puts "Your record is now: #{scoreboard.total} games played, #{scoreboard.wins} wins, #{scoreboard.losses} losses (#{scoreboard.percentage}%)"
+
+scoreboard = Record.where(name: g.winner.name)
+scoreboard.each {|x| puts "#{g.winner.name}, your record is now: #{x.wins} wins and #{x.losses} losses"}
 
 # scoreboard = Memory.first_or_create!(name: name)
 
